@@ -6,6 +6,9 @@ v_y = [0; 1; 0];
 v_z = [0; 0; 1];
 
 v = [v1,v2,v3];
+[u,s,w] = svd(v);
+v_corr = u*w';
+
 v_new = [v_x,v_y,v_z];
 
 A = v_new/v;
