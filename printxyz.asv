@@ -1,0 +1,7 @@
+function out = printxyz(data)
+
+d = data;
+for ii = 1:leng
+writetable(struct2table(d), 'new_geom.txt')
+
+end

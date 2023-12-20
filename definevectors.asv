@@ -1,0 +1,23 @@
+function [v1,v2,v3,v_xyz] = definevectors(newcoordinates,atom1,atom2,atom3)
+n = newcoordinates;
+a1 = atom1;
+a2 = atom2;
+a3 = atom3;
+
+v1(1) = n(a2).x - n(a1).x;
+v1(2) = n(a2).y - n(a1).y;
+v1(3) = n(a2).z - n(a1).z;
+
+v2(1) = n(a3).x - n(a1).x;
+v2(2) = n(a3).y - n(a1).y;
+v2(3) = n(a3).z - n(a1).z;
+
+if abs(dot(v1,v2)) > 0.01
+    warning('Atoms chosen do not form orthogonal vectors')
+    v3 = [];
+else
+    v3 = cross(v1,v2);
+end  
+
+v_xyz = 
+end
